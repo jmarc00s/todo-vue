@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <task-input v-on:tarefa-adicionada="adicionarTarefa($event)"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import TaskInput from './components/TaskInput';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    TaskInput
+  },
+  methods: {
+    adicionarTarefa(tarefa){
+      console.log(tarefa);
+    }
+  },
+  data: () => {
+    return {
+      tarefas: []
+    }
   }
 }
+ 
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  align-content: center;  
+  flex: 1 0 auto;
+  justify-content: center;
+  height: 100vh;
 }
 </style>
