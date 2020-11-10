@@ -10,12 +10,12 @@
             id="taskDescription">
 
         <button 
-          :click="emitirTarefa()"
-          type="submit"
+          v-on:click="emitirTarefa()"
+          type="button"
           class="btn btn-primary">
           Adicionar tarefa
         </button>
-
+              
       </form>      
   </div>
 </template>
@@ -23,13 +23,15 @@
 <script>
 export default {
   methods: {
-    emitirTarefa: () => {
+    emitirTarefa() {
+      if(!this.task) return;
       this.$emit('tarefa-adicionada', this.task);
+      this.task = '';
     }
   },
-  data: () => {
+  data() {
     return {
-      task: undefined,
+      task: '',
     }
   }  
 

@@ -1,23 +1,27 @@
 <template>
   <div id="app">
    <task-input v-on:tarefa-adicionada="adicionarTarefa($event)"/>
+   <lista-tarefas :tarefas="tarefas" />
+   
   </div>
 </template>
 
 <script>
 
-import TaskInput from './components/TaskInput';
+import TaskInput from './components/TarefaInput';
+import ListaTarefas from './components/ListaTarefas';
 
 export default {
   components: {
-    TaskInput
+    TaskInput,
+    ListaTarefas
   },
   methods: {
     adicionarTarefa(tarefa){
-      console.log(tarefa);
+      this.tarefas.push(tarefa);
     }
   },
-  data: () => {
+  data() {
     return {
       tarefas: []
     }
@@ -29,6 +33,7 @@ export default {
 <style>
 #app {
   display: flex;
+  flex-direction: column;
   align-items: center;
   align-content: center;  
   flex: 1 0 auto;
