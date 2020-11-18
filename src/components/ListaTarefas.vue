@@ -1,6 +1,6 @@
 <template>
-  <div class="lista-tarefas">
-      <tarefa v-for="tarefa in tarefas" :key="tarefa" :tarefa="tarefa" />
+  <div class="lista-tarefas row">
+      <tarefa class="col-md" v-for="tarefa in tarefas" :key="tarefa.descricao" :tarefa="tarefa" />
   </div>
 </template>
 
@@ -10,7 +10,9 @@ export default {
     components: {
         Tarefa
     },
-    props: ['tarefas'],
+    props: {
+        tarefas: Array
+    },
 
     methods: {
 
@@ -26,5 +28,7 @@ export default {
 </script>
 
 <style>
+.lista-tarefas {
 
+}
 </style>

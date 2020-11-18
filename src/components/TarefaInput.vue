@@ -1,10 +1,10 @@
 <template>
-  <div id="task-input-container">
-      <form class="form-group form-inline">  
+  <div id="task-input-container">     
 
+      <form class="form-group form-inline"> 
         <input 
             class="form-control"
-            placeholder="Tarefa"
+            placeholder="Inserir tarefa"
             v-model="task" 
             type="text" 
             id="taskDescription">
@@ -13,7 +13,7 @@
           v-on:click="emitirTarefa()"
           type="button"
           class="btn btn-primary">
-          Adicionar tarefa
+          +
         </button>
               
       </form>      
