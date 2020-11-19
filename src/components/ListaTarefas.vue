@@ -1,6 +1,11 @@
 <template>
   <div class="lista-tarefas row">
-      <tarefa class="col-md" v-for="tarefa in tarefas" :key="tarefa.descricao" :tarefa="tarefa" />
+      <tarefa 
+            class="col-md" 
+            v-for="tarefa in tarefas" 
+            :key="tarefa.descricao" 
+            :tarefa="tarefa"
+            v-on:remover-tarefa="removerTarefa($event)" />
   </div>
 </template>
 
@@ -15,7 +20,11 @@ export default {
     },
 
     methods: {
+        removerTarefa(tarefa) {
+            if(!tarefa) return;
 
+            this.tarefas.splice(this.tarefas.indexOf(tarefa), 1);
+        }
     }, 
 
     data() {

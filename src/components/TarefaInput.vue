@@ -1,17 +1,17 @@
 <template>
   <div id="task-input-container">     
 
-      <form class="form-group form-inline"> 
+      <form @submit.prevent class="tarefa-form form-group form-inline w-100"> 
         <input 
-            class="form-control"
+            class="form-control w-75"
             placeholder="Inserir tarefa"
-            v-model="task" 
+            v-model="tarefa" 
             type="text" 
             id="taskDescription">
 
         <button 
           v-on:click="emitirTarefa()"
-          type="button"
+          type="submit"
           class="btn btn-primary">
           +
         </button>
@@ -24,20 +24,25 @@
 export default {
   methods: {
     emitirTarefa() {
-      if(!this.task) return;
-      this.$emit('tarefa-adicionada', this.task);
-      this.task = '';
+      if(!this.tarefa) return;
+
+      this.$emit('tarefa-adicionada', this.tarefa);
+      this.tarefa = '';
     }
   },
   data() {
     return {
-      task: '',
+      tarefa: '',
     }
   }  
 
 }
 </script>
 
-<style>
-
+<style scoped>
+.tarefa-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
