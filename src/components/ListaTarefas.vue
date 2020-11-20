@@ -6,6 +6,7 @@
             :key="tarefa.descricao" 
             :tarefa="tarefa"
             v-on:remover-tarefa="removerTarefa($event)" />
+        <p v-if="!tarefas.length" class="w-100 text-center">Sua vida está em dia!</p>
   </div>
 </template>
 

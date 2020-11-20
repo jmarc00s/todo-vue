@@ -14,7 +14,10 @@
 <script>
 export default {
     props: {
-        tarefa: Object
+        tarefa: {
+            type: Object,
+            required: true
+        }
     },
     methods: {
         toggleConcluirTarefa(tarefa){
@@ -59,9 +62,11 @@ export default {
     padding: 8px;
     border-left: solid 15px rgba(0, 0, 0, 0.2);
     font-size: 25px;
+    user-select: none;
 }
 .tarefa-concluida {
     background-color: #5cb85c;
     text-decoration-line: line-through;
+    color: #ddd;
 }
 </style>

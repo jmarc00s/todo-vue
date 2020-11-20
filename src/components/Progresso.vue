@@ -1,8 +1,8 @@
 <template>
-  <div v-if="existeTarefaConcluida()">
-     <div class="progress w-100">
-         <div class="progress-bar progress-bar-stripped" :style="{width: porcentagemConcluida() + '%'}">
-             {{porcentagemConcluida() + '%'}}
+  <div v-if="existeTarefaConcluida()" class="mb-3">
+     <div class="progress w-100" style="height: 30px">
+         <div class="progress-bar bg-success progress-bar-stripped" :style="{width: porcentagemConcluida() + '%'}">
+             <span class="descricao-porcentagem">{{porcentagemConcluida() + '%'}}</span>
         </div>         
      </div> 
   </div>
@@ -33,4 +33,8 @@ export default {
 </script>
 
 <style scoped>
+
+.descricao-porcentagem {
+    font-size: 18px;
+}
 </style>

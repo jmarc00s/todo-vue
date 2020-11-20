@@ -1,11 +1,9 @@
 <template>
   <div id="app">
-    <progresso class="progresso" :tarefas="tarefas"></progresso>
-
     <h1>Tarefas</h1>
 
+    <progresso class="progresso" :tarefas="tarefas"></progresso>
     <task-input class="tarefa-form" v-on:tarefa-adicionada="adicionarTarefa($event)"/>
-
     <lista-tarefas class="lista-tarefas" :tarefas="tarefas" />   
   </div>
 </template>

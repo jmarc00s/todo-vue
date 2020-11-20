@@ -25,7 +25,6 @@ export default {
   methods: {
     emitirTarefa() {
       if(!this.tarefa) return;
-
       this.$emit('tarefa-adicionada', this.tarefa);
       this.tarefa = '';
     }
