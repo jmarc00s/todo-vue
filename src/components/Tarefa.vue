@@ -48,8 +48,8 @@ export default {
 .tarefa {
     margin: 0 10px 10px 0;
     background-color: #d9534f;   
-    height: 100px;
-    min-width: 100px;    
+    height: 150px;
+    min-width: 200px;    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +57,11 @@ export default {
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 1);
     padding: 8px;
+    border-left: solid 15px rgba(0, 0, 0, 0.2);
+    font-size: 25px;
 }
 .tarefa-concluida {
     background-color: #5cb85c;
+    text-decoration-line: line-through;
 }
 </style>
